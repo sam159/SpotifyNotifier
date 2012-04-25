@@ -1,0 +1,6 @@
+
+*.suo
+/SpotifyNotifier/bin/Debug
+/Setup/Release
+/Setup/Debug
+/SpotifyNotifier/obj/Debug

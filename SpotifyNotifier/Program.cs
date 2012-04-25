@@ -14,6 +14,7 @@ namespace SpotifyNotifier
         [STAThread]
         static void Main()
         {
+            //Only allow one instance to run (dont want multiple popups)
             var processes = System.Diagnostics.Process.GetProcesses();
             var thisProcess = System.Diagnostics.Process.GetCurrentProcess();
 

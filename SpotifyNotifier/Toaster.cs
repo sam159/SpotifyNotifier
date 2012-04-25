@@ -13,12 +13,18 @@ namespace SpotifyNotifier
     {
         bool fadeIn = true;
 
+        /// <summary>
+        /// New Toaster (using new fadeable bread)
+        /// </summary>
+        /// <param name="artist">The artist</param>
+        /// <param name="track">The track</param>
         public Toaster(string artist, string track)
         {
             InitializeComponent();
 
             lblArtist.Text = artist;
             lblTrack.Text = track;
+            //Set position from previous toaster (See Form_Closing)
             Top = Properties.Settings.Default.ToasterX;
             Left = Properties.Settings.Default.ToasterY;
 
@@ -40,12 +46,16 @@ namespace SpotifyNotifier
 
             if (Opacity == 1 && fadeIn)
             {
+                //Stop Fading
                 tmrFade.Enabled = false;
+                //Fade out next time enabled
                 fadeIn = false;
+
                 tmrShow.Enabled = true;
             }
             if (this.Opacity == 0 && !fadeIn)
             {
+                //Faded out, exit.
                 tmrFade.Enabled = false;
                 this.Close();
             }
@@ -58,6 +68,7 @@ namespace SpotifyNotifier
 
         private void Toaster_FormClosing(object sender, FormClosingEventArgs e)
         {
+            //Save the forms poisition when closing
             Properties.Settings.Default.ToasterX = Top;
             Properties.Settings.Default.ToasterY = Left;
             Properties.Settings.Default.Save();

@@ -79,7 +79,7 @@ namespace SpotifyNotifier
             }
         }
 
-        private void Toaster_Move(object sender, EventArgs e)
+        private void SavePosition(object sender, EventArgs e)
         {
             //Save the forms poisition when moving
             Properties.Settings.Default.ToasterX = Top;
@@ -92,7 +92,8 @@ namespace SpotifyNotifier
         private void Toaster_Shown(object sender, EventArgs e)
         {
             //Attatch at runtime. This is to stop it being fired when the form is first shown with the default values
-            this.Move += new EventHandler(Toaster_Move);
+            this.Move += new EventHandler(SavePosition);
+            this.Resize += new EventHandler(SavePosition);
         }
     }
 }

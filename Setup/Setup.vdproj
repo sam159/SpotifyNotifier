@@ -87,6 +87,19 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Net.Framework.3.5.SP1"
+                    {
+                    "Name" = "8:.NET Framework 3.5 SP1"
+                    "ProductCode" = "8:Microsoft.Net.Framework.3.5.SP1"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Windows.Installer.3.1"
+                    {
+                    "Name" = "8:Windows Installer 3.1"
+                    "ProductCode" = "8:Microsoft.Windows.Installer.3.1"
+                    }
+                }
             }
         }
     }
@@ -184,14 +197,14 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Spotify Notifier"
-        "ProductCode" = "8:{54727CF8-6A56-4E57-B0AB-71EB9921E86F}"
-        "PackageCode" = "8:{8DA8E7BB-CDB4-4448-B82D-08728AE850FA}"
+        "ProductCode" = "8:{1E240A72-26E5-4CA4-B335-51F72F2B5048}"
+        "PackageCode" = "8:{3E31385D-2D9A-4349-99C3-20E694B1D63B}"
         "UpgradeCode" = "8:{8297E49D-AE5A-49C6-81BC-CA0C31C4218D}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.0.4"
+        "ProductVersion" = "8:1.0.5"
         "Manufacturer" = "8:Xnet"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"

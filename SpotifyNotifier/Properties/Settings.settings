@@ -8,5 +8,11 @@
     <Setting Name="ToasterY" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
+    <Setting Name="ToasterWidth" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">335</Value>
+    </Setting>
+    <Setting Name="ToasterHeight" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">100</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -27,6 +27,8 @@ namespace SpotifyNotifier
             //Set position from previous toaster (See Form_Closing)
             Top = Properties.Settings.Default.ToasterX;
             Left = Properties.Settings.Default.ToasterY;
+            Width = Properties.Settings.Default.ToasterWidth;
+            Height = Properties.Settings.Default.ToasterHeight;
 
             ShowInTaskbar = false;
             ShowIcon = false;
@@ -66,12 +68,31 @@ namespace SpotifyNotifier
             tmrFade.Enabled = true;
         }
 
-        private void Toaster_FormClosing(object sender, FormClosingEventArgs e)
+        /// <summary>
+        /// Returns true to stop focus stealing
+        /// </summary>
+        protected override bool ShowWithoutActivation
         {
-            //Save the forms poisition when closing
+            get
+            {
+                return true;
+            }
+        }
+
+        private void Toaster_Move(object sender, EventArgs e)
+        {
+            //Save the forms poisition when moving
             Properties.Settings.Default.ToasterX = Top;
             Properties.Settings.Default.ToasterY = Left;
+            Properties.Settings.Default.ToasterWidth = Width;
+            Properties.Settings.Default.ToasterHeight = Height;
             Properties.Settings.Default.Save();
+        }
+
+        private void Toaster_Shown(object sender, EventArgs e)
+        {
+            //Attatch at runtime. This is to stop it being fired when the form is first shown with the default values
+            this.Move += new EventHandler(Toaster_Move);
         }
     }
 }

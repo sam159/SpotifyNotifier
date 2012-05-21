@@ -37,6 +37,8 @@
             // 
             // lblArtist
             // 
+            this.lblArtist.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.lblArtist.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblArtist.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblArtist.Location = new System.Drawing.Point(12, 9);
@@ -48,6 +50,9 @@
             // 
             // lblTrack
             // 
+            this.lblTrack.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTrack.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTrack.Location = new System.Drawing.Point(12, 39);
             this.lblTrack.Name = "lblTrack";
@@ -74,7 +79,7 @@
             this.ClientSize = new System.Drawing.Size(328, 71);
             this.Controls.Add(this.lblTrack);
             this.Controls.Add(this.lblArtist);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Toaster";
@@ -83,7 +88,7 @@
             this.Text = "New Song";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.Toaster_Load);
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Toaster_FormClosing);
+            this.Shown += new System.EventHandler(this.Toaster_Shown);
             this.ResumeLayout(false);
 
         }

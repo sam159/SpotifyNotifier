@@ -79,6 +79,24 @@ namespace SpotifyNotifier
             }
         }
 
+        const int WS_EX_NOACTIVATE = 0x08000000;
+        const int WS_EX_TOPMOST = 0x00000008;
+
+        /// <summary>
+        /// stop focus stealing
+        /// </summary>
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams param = base.CreateParams;
+                param.ExStyle |= WS_EX_TOPMOST; // make the form topmost
+                param.ExStyle |= WS_EX_NOACTIVATE; // prevent the form from being activated
+                return param;
+            }
+        }
+
+
         private void SavePosition(object sender, EventArgs e)
         {
             //Save the forms poisition when moving
